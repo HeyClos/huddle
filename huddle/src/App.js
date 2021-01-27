@@ -3,10 +3,10 @@ import './App.css';
 import React, { useState, useEffect } from 'react';
 
 function App() {
-  const [currentTime, setCurrentTime] = useState(0)
+  const [currentTime, setCurrentTime] = useState("Loading...")
 
   useEffect(()=> {
-    fetch('/time').then(res => res.json()).then(data => setCurrentTime(data.time));
+    fetch('/api/time').then(res => res.json()).then(data => setCurrentTime(data.time));
   }, [])
 
   return (
